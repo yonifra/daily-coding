@@ -1,6 +1,8 @@
 // Given a string and the ability to delete at most one character, return whether or not it can form a palindrome.
 // Note: a palindrome is a sequence of characters that reads the same forwards and backwards.
 
+// Solution runtime is O(n) since we scan the input from both sides until we reach the middle.
+
 const removeOnePalindrome = (str: String): boolean => {
   let left: number = 0
   let right: number = str.length - 1
