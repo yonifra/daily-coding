@@ -10,7 +10,7 @@
 // Solution runtime is O(n) linear time worst case since we iterate through the array once and use a set to check if the difference between the target and the current value is in the set.
 
 
-const twoSum = (arr: number[], target: number) => {
+const twoSum = (arr: number[], target: number): boolean => {
     const set = new Set(arr);
 
     for (let i = 0; i < arr.length; i++) {
