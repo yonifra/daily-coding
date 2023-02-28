@@ -15,8 +15,6 @@
 //   3   9
 // return 3
 
-// IDEA: Traverse the tree in DFS and print only the leaves that are on the left
-
 interface TreeNode {
     value: number,
     right: TreeNode | null,
