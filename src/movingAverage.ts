@@ -10,24 +10,27 @@
 // m.next(7) = returns 5 because (3 + 5 + 7) / 3 = 5
 // m.next(6) = returns 6 because (5 + 7 + 6) / 3 = 6
 
+// MovingAverage class takes in a capacity and returns the average of the last 'capacity' numbers
 class MovingAverage {
-    capacity: number
-    arr: number[]
+    capacity: number // the number of elements in the array
+    arr: number[] // the array to store the last 'capacity' numbers
 
     constructor(capacity: number) {
         this.capacity = capacity
-        this.arr = []
+        this.arr = [] // initialize the array
     }
 
     next(n: number): number {
-        if (this.arr.length === this.capacity) {
-            this.arr.shift()
+        if (this.arr.length === this.capacity) { // if the array is at capacity
+            this.arr.shift() // remove the first element
         }
-        this.arr.push(n)
-        return this.arr.reduce((accumulator, currentValue) => accumulator + currentValue,0) / this.arr.length
+        this.arr.push(n) // add the new element
+        return this.arr.reduce((accumulator, currentValue) => accumulator + currentValue,0) / this.arr.length // return the average
     }
 }
 
+// run the runStuff function
+runStuff()
 const runStuff = () => {
     const movingAverage = new MovingAverage(3)
     console.log(movingAverage.next(3))
