@@ -6,15 +6,15 @@
 // 1->null, return 1
 
 interface LLNode {
-    value: number,
-    next: LLNode | undefined,
+    value: number
+    next: LLNode | undefined
 }
 
 const findMiddle = (head: LLNode): number => {
     let counter: number = 1
     let curr = head
 
-    while(curr) {
+    while (curr) {
         counter++
         curr = curr.next!
     }
@@ -23,7 +23,7 @@ const findMiddle = (head: LLNode): number => {
     counter = 1
     curr = head
 
-    while(counter !== target) {
+    while (counter !== target) {
         curr = curr.next!
         counter++
     }
@@ -31,6 +31,18 @@ const findMiddle = (head: LLNode): number => {
     return curr.value
 }
 
-const list = { value: 1, next: { value: 2, next: { value: 3, next: { value: 4, next: {value: 5, next: {value: 6, next: undefined}} } } } }
+const list = {
+    value: 1,
+    next: {
+        value: 2,
+        next: {
+            value: 3,
+            next: {
+                value: 4,
+                next: { value: 5, next: { value: 6, next: undefined } },
+            },
+        },
+    },
+}
 
 console.log(findMiddle(list))

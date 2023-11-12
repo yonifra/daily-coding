@@ -7,11 +7,14 @@
 // list1 = 4->4->7, list2 = 1->5->6->null, return 1->4->4->5->6->7->null
 
 interface LinkedListNode {
-    value: number;
+    value: number
     next: LinkedListNode | undefined
 }
 
-const mergeLinkedLists = (list1: LinkedListNode, list2: LinkedListNode): LinkedListNode => {
+const mergeLinkedLists = (
+    list1: LinkedListNode,
+    list2: LinkedListNode
+): LinkedListNode => {
     const head = list1.value > list2.value ? list2 : list1
 
     while (list1 && list2) {
@@ -25,7 +28,6 @@ const mergeLinkedLists = (list1: LinkedListNode, list2: LinkedListNode): LinkedL
                 list2.next = temp
                 list2 = temp2!
             } else {
-
             }
         }
     }
@@ -35,14 +37,20 @@ const mergeLinkedLists = (list1: LinkedListNode, list2: LinkedListNode): LinkedL
 
 const printLinkedList = (head: LinkedListNode) => {
     const parts: number[] = []
-    while(head) {
+    while (head) {
         parts.push(head.value)
         head = head.next!
     }
 
-    console.log(parts.join(', '))
+    console.log(parts.join(", "))
 }
 
-const list1 = { value: 1, next: { value: 2, next: { value: 3, next: undefined } } }
-const list2 = { value: 4, next: { value: 5, next: { value: 6, next: undefined } } }
+const list1 = {
+    value: 1,
+    next: { value: 2, next: { value: 3, next: undefined } },
+}
+const list2 = {
+    value: 4,
+    next: { value: 5, next: { value: 6, next: undefined } },
+}
 printLinkedList(mergeLinkedLists(list1, list2))

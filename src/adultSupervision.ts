@@ -17,28 +17,28 @@
 // ], k = 2, return [2, 1].
 
 const adultSupervision = (matrix, k) => {
-  const adults = matrix.map((row) => row.filter((num) => num === 1).length)
-  const sorted = adults.slice().sort((a, b) => a - b)
-  const result = []
-  let i = 0
+    const adults = matrix.map((row) => row.filter((num) => num === 1).length)
+    const sorted = adults.slice().sort((a, b) => a - b)
+    const result = []
+    let i = 0
 
-  while (i < k) {
-    const index = adults.indexOf(sorted[i])
-    result.push(index)
-    adults[index] = Infinity
-    i++
-  }
+    while (i < k) {
+        const index = adults.indexOf(sorted[i])
+        result.push(index)
+        adults[index] = Infinity
+        i++
+    }
 
-  return result
+    return result
 }
 
 console.log(
-  adultSupervision(
-    [
-      [1, 1, 0],
-      [1, 0, 0],
-      [0, 0, 0],
-    ],
-    3
-  )
+    adultSupervision(
+        [
+            [1, 1, 0],
+            [1, 0, 0],
+            [0, 0, 0],
+        ],
+        3
+    )
 ) // [2,1,0]

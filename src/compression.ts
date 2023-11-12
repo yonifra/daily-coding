@@ -4,9 +4,9 @@
 const compress = (arr: any[]): number => {
     const map = new Map<String, number>()
 
-    arr.forEach(char => {
+    arr.forEach((char) => {
         if (map.has(char)) {
-            map.set(char, map.get(char)+1)
+            map.set(char, map.get(char) + 1)
         } else {
             map.set(char, 1)
         }
@@ -15,4 +15,4 @@ const compress = (arr: any[]): number => {
     return map.size < arr.length ? map.size : arr.length
 }
 
-console.log(compress(['a','a','a','a','a','a']))
+console.log(compress(["a", "a", "a", "a", "a", "a"]))

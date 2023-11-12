@@ -1,10 +1,10 @@
-console.log(countWords('this is the this marvelous'))
-console.log(maxWord('this is the this marvelous'))
+console.log(countWords("this is the this marvelous"))
+console.log(maxWord("this is the this marvelous"))
 
 function countWords(str: string) {
     const map = new Map<string, number>()
 
-    str.split(' ').forEach(word => {
+    str.split(" ").forEach((word) => {
         if (map.has(word)) {
             map.set(word, map.get(word) + 1)
         } else {
@@ -17,12 +17,11 @@ function countWords(str: string) {
 
 function maxWord(str: string) {
     let maxCount = 0
-    let maxWord = ''
+    let maxWord = ""
     const map = new Map<string, number>()
 
-    str.split(' ').forEach(word => {
+    str.split(" ").forEach((word) => {
         if (map.has(word)) {
-
             map.set(word, map.get(word) + 1)
         } else {
             map.set(word, 1)
@@ -35,5 +34,5 @@ function maxWord(str: string) {
         }
     })
 
-    return {maxWord, maxCount}
+    return { maxWord, maxCount }
 }

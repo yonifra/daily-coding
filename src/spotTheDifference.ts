@@ -11,30 +11,30 @@
 
 const spotTheDifference = (s: string, t: string): string => {
     if (s.length === t.length) {
-        return '';
+        return ""
     }
 
     let seen = new Map<string, number>()
 
-    for(let i = 0; i < s.length; i++) {
+    for (let i = 0; i < s.length; i++) {
         if (seen[s[i]]) {
-            seen[s[i]]++;
+            seen[s[i]]++
         } else {
-            seen[s[i]] = 1;
+            seen[s[i]] = 1
         }
     }
 
-    for(let j = 0; j < t.length; j++) {
+    for (let j = 0; j < t.length; j++) {
         if (!seen[t[j]]) {
-            return t[j];
+            return t[j]
         } else {
             seen[t[j]]--
         }
     }
 
-    return ''
+    return ""
 }
 
-console.log(spotTheDifference('foobar', 'barfoot'));
-console.log(spotTheDifference('ide', 'idea'));
-console.log(spotTheDifference('coding', 'ingcod'));
+console.log(spotTheDifference("foobar", "barfoot"))
+console.log(spotTheDifference("ide", "idea"))
+console.log(spotTheDifference("coding", "ingcod"))

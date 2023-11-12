@@ -16,8 +16,8 @@
 // return 3
 
 interface TreeNode {
-    value: number,
-    right: TreeNode | null,
+    value: number
+    right: TreeNode | null
     left: TreeNode | null
 }
 
@@ -35,7 +35,11 @@ const sumOfLeftLeaves = (root: TreeNode | null | undefined): number => {
 
 const v: TreeNode = {
     value: 5,
-    right: { value: 12, right: { value: 8, right: null, left: null }, left: { value: 3, right: null, left: null } },
-    left: { value: 2, right: null, left: null }
+    right: {
+        value: 12,
+        right: { value: 8, right: null, left: null },
+        left: { value: 3, right: null, left: null },
+    },
+    left: { value: 2, right: null, left: null },
 }
 console.log(sumOfLeftLeaves(v))

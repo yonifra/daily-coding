@@ -8,12 +8,12 @@
 // word1 = ["a", "b", "c"], word2 = ["a", "b", "d"], return false.
 
 const checkStrings = (word1: string[], word2: string[]): boolean => {
-    const mergedWord1 = word1.join('')
-    const mergedWord2 = word2.join('')
+    const mergedWord1 = word1.join("")
+    const mergedWord2 = word2.join("")
 
     return mergedWord1 === mergedWord2
 }
 
-console.log(checkStrings(['ab', 'cd'], ['abc', 'd']))
-console.log(checkStrings(['a', 'bc'], ['ab', 'c']))
-console.log(checkStrings(['a', 'bd'], ['ab', 'c']))
+console.log(checkStrings(["ab", "cd"], ["abc", "d"]))
+console.log(checkStrings(["a", "bc"], ["ab", "c"]))
+console.log(checkStrings(["a", "bd"], ["ab", "c"]))

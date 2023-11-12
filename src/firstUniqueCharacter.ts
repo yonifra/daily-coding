@@ -11,22 +11,22 @@ const findUniqueCharacter = (s: string): number => {
 
     for (let i = 0; i < s.length; i++) {
         if (seen[s[i]]) {
-            seen[s[i]]++;
+            seen[s[i]]++
         } else {
-            seen[s[i]] = 1;
+            seen[s[i]] = 1
         }
     }
 
     for (let j = 0; j < s.length; j++) {
         if (seen[s[j]] === 1) {
-            return j;
+            return j
         }
     }
 
-    return -1;
+    return -1
 }
 
-console.log(findUniqueCharacter('abcabd'));
-console.log(findUniqueCharacter('thedailybyte'));
-console.log(findUniqueCharacter('developer'));
-console.log(findUniqueCharacter('aavvcc'));
+console.log(findUniqueCharacter("abcabd"))
+console.log(findUniqueCharacter("thedailybyte"))
+console.log(findUniqueCharacter("developer"))
+console.log(findUniqueCharacter("aavvcc"))

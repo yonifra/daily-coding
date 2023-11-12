@@ -11,12 +11,12 @@ const sumToZero = (N: number): number[] => {
     const arr: number[] = []
     const isOdd: boolean = N % 2 !== 0
 
-    for(let i = 1; i < N+1; i+=2) {
+    for (let i = 1; i < N + 1; i += 2) {
         if (isOdd && i === N) {
             arr.push(0)
         } else {
-            arr.push(N-i)
-            arr.push(-(N-i))
+            arr.push(N - i)
+            arr.push(-(N - i))
         }
     }
 
@@ -28,4 +28,7 @@ const ans = sumToZero(sum)
 
 console.log(`Length of array is`, ans.length)
 console.log(`Summing to ${sum}`, ans)
-console.log(`Total sum is`, ans.reduce((acc, curr, ans)=>acc + curr,0))
+console.log(
+    `Total sum is`,
+    ans.reduce((acc, curr, ans) => acc + curr, 0)
+)

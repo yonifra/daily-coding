@@ -9,18 +9,21 @@
 // and the search value 1 return a reference to the node containing 1.
 
 interface BSTNode {
-    value: number,
-    right: BSTNode,
+    value: number
+    right: BSTNode
     left: BSTNode
 }
 
-const findValue = (bstNode: BSTNode, valueToFind: number): number | undefined => {
+const findValue = (
+    bstNode: BSTNode,
+    valueToFind: number
+): number | undefined => {
     if (!bstNode) {
         return undefined
     }
 
     if (bstNode.value === valueToFind) {
-        return bstNode
+        return bstNode.value
     }
 
     if (valueToFind < bstNode.value) {
@@ -29,4 +32,3 @@ const findValue = (bstNode: BSTNode, valueToFind: number): number | undefined =>
 
     return findValue(bstNode.right, valueToFind)
 }
-

@@ -7,8 +7,8 @@
 // 7->12->2->9->null, value = 7, return 12->2->9->null
 
 interface LLNode {
-    value: number,
-    next: LLNode | undefined,
+    value: number
+    next: LLNode | undefined
 }
 
 const printList = (head: LLNode | undefined) => {
@@ -17,7 +17,7 @@ const printList = (head: LLNode | undefined) => {
         result.push(head.value)
         head = head.next
     }
-    console.log(result.join(' -> '))
+    console.log(result.join(" -> "))
 }
 
 const removeValue = (node: LLNode, value: number): LLNode => {
@@ -43,6 +43,9 @@ const removeValue = (node: LLNode, value: number): LLNode => {
     return first
 }
 
-const list = { value: 1, next: { value: 2, next: { value: 3, next: { value: 4, next: undefined } } } }
+const list = {
+    value: 1,
+    next: { value: 2, next: { value: 3, next: { value: 4, next: undefined } } },
+}
 
 printList(removeValue(list, 3))

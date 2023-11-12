@@ -9,10 +9,10 @@
 // jewels = "AYOPD", stones = "ayopd", return 0
 
 const jewelsAndStones = (jewels: string, stones: string): number => {
-    const jewelsSet = new Set(jewels.split(''))
+    const jewelsSet = new Set(jewels.split(""))
     let count = 0
 
-    stones.split('').forEach(stone => {
+    stones.split("").forEach((stone) => {
         if (jewelsSet.has(stone)) {
             count++
         }
@@ -21,6 +21,6 @@ const jewelsAndStones = (jewels: string, stones: string): number => {
     return count
 }
 
-console.log(jewelsAndStones('abc', 'ac'))
-console.log(jewelsAndStones('Af', 'AaaddfFf'))
-console.log(jewelsAndStones('AYOPD', 'ayopd'))
+console.log(jewelsAndStones("abc", "ac"))
+console.log(jewelsAndStones("Af", "AaaddfFf"))
+console.log(jewelsAndStones("AYOPD", "ayopd"))

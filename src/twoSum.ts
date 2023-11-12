@@ -9,19 +9,18 @@
 
 // Solution runtime is O(n) linear time worst case since we iterate through the array once and use a set to check if the difference between the target and the current value is in the set.
 
-
 const twoSum = (arr: number[], target: number): boolean => {
-    const set = new Set(arr);
+    const set = new Set(arr)
 
     for (let i = 0; i < arr.length; i++) {
         if (set.has(target - arr[i])) {
-            return true;
+            return true
         }
     }
 
-    return false;
+    return false
 }
 
-console.log(twoSum([1, 3, 8, 2], 10));
-console.log(twoSum([3, 9, 13, 7], 8));
-console.log(twoSum([4, 2, 6, 5, 2], 4));
+console.log(twoSum([1, 3, 8, 2], 10))
+console.log(twoSum([3, 9, 13, 7], 8))
+console.log(twoSum([4, 2, 6, 5, 2], 4))

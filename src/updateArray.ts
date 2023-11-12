@@ -11,7 +11,7 @@ const findMax = (nums: number[], start: number, end: number): number => {
     }
 
     let currentMax = -1
-    for(let j = start; j <= end; j++) {
+    for (let j = start; j <= end; j++) {
         if (nums[j] > currentMax) {
             currentMax = nums[j]
         }
@@ -23,12 +23,12 @@ const findMax = (nums: number[], start: number, end: number): number => {
 const updateArray = (nums: number[]): number[] => {
     const updatedArray = [...nums]
 
-    for(let i = 0; i < nums.length; i++) {
-        updatedArray[i] = findMax(nums, i+1, nums.length)
+    for (let i = 0; i < nums.length; i++) {
+        updatedArray[i] = findMax(nums, i + 1, nums.length)
     }
 
     return updatedArray
 }
 
-console.log(updateArray([5,2,3]))
+console.log(updateArray([5, 2, 3]))
 console.log(updateArray([10, 2, 5, 8, 9]))

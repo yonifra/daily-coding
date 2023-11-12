@@ -21,11 +21,17 @@ class MovingAverage {
     }
 
     next(n: number): number {
-        if (this.arr.length === this.capacity) { // if the array is at capacity
+        if (this.arr.length === this.capacity) {
+            // if the array is at capacity
             this.arr.shift() // remove the first element
         }
         this.arr.push(n) // add the new element
-        return this.arr.reduce((accumulator, currentValue) => accumulator + currentValue,0) / this.arr.length // return the average
+        return (
+            this.arr.reduce(
+                (accumulator, currentValue) => accumulator + currentValue,
+                0
+            ) / this.arr.length
+        ) // return the average
     }
 }
 

@@ -8,8 +8,8 @@
 // 1->1 true (1 points to itself)
 
 interface LLNode {
-    value: number,
-    next: LLNode | undefined,
+    value: number
+    next: LLNode | undefined
 }
 
 const containsCycle = (node: LLNode): boolean => {
@@ -27,5 +27,17 @@ const containsCycle = (node: LLNode): boolean => {
     return false
 }
 
-const list = { value: 1, next: { value: 2, next: { value: 3, next: { value: 4, next: { value: 9, next: { value: 6, next: undefined } } } } } }
+const list = {
+    value: 1,
+    next: {
+        value: 2,
+        next: {
+            value: 3,
+            next: {
+                value: 4,
+                next: { value: 9, next: { value: 6, next: undefined } },
+            },
+        },
+    },
+}
 console.log(containsCycle(list))
