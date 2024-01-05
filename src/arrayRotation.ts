@@ -4,6 +4,11 @@ const isSorted = (arr: number[]): boolean => {
     return arr.every((num, index) => index === 0 || num >= arr[index - 1])
 }
 
+/**
+ * Checks if an array of numbers is sorted after being rotated.
+ * @param nums - An array of numbers representing the rotated array.
+ * @returns True if the rotated array is sorted, false otherwise.
+ */
 const isRotated = (nums: number[]): boolean => {
     let breakingPoint = -1
 
