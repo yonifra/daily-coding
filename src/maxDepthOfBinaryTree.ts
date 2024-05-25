@@ -1,6 +1,12 @@
 // Binary tree max depth
 // Link: https://leetcode.com/problems/maximum-depth-of-binary-tree/
 
+interface TreeNode {
+    val: number,
+    left: TreeNode | null,
+    right: TreeNode | null
+}
+
 /**
  * Definition for a binary tree node.
  * function TreeNode(val, left, right) {
@@ -9,11 +15,7 @@
  *     this.right = (right===undefined ? null : right)
  * }
  */
-/**
- * @param {TreeNode} root
- * @return {number}
- */
-var maxDepth = function(root) {
+var maxDepth = function(root: TreeNode): number {
     // Cases where the tree is empty or contains just one node
     if (!root) return 0;
     if (!root.right && !root.left) return 1;
@@ -22,7 +24,7 @@ var maxDepth = function(root) {
     return Math.max(maxDepthRec(root.right, 1), maxDepthRec(root.left, 1))
 };
 
-function maxDepthRec(node, depthSoFar) {
+function maxDepthRec(node: TreeNode, depthSoFar: number): number {
     if (!node) {
         // no node - return the depth you got so far
         return depthSoFar;
