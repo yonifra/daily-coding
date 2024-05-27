@@ -1,3 +1,7 @@
+// LeetCode: #543 Diameter of Binary Tree
+// Link: https://leetcode.com/problems/diameter-of-binary-tree/description/
+// Difficulty: Easy
+
 /**
  * Definition for a binary tree node.
  * function TreeNode(val, left, right) {
