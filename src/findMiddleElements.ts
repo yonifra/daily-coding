@@ -31,7 +31,7 @@ const findMiddle = (head: LLNode): number => {
     return curr.value
 }
 
-const list = {
+console.log(findMiddle({
     value: 1,
     next: {
         value: 2,
@@ -43,6 +43,4 @@ const list = {
             },
         },
     },
-}
-
-console.log(findMiddle(list))
+}))
