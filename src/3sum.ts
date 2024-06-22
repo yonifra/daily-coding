@@ -1,5 +1,10 @@
 // 3Sum problem - [MEDIUM]
 // https://leetcode.com/problems/3sum/
+// The idea here is to first sort the array, then iterate through the array and for each element, use two pointers to find the other two elements that sum to 0.
+// We skip duplicates and increment the pointers accordingly.
+
+// Time complexity: O(n^2) - we iterate through the array and for each element, we use two pointers to find the other two elements.
+// Space complexity: O(1) - we don't use any extra space.
 
 function threeSum(nums: number[]): number[][] {
     nums = nums.sort((a,b) => a - b); // order by descending
