@@ -3,7 +3,7 @@
 // 0 <= a, b, c, d < n
 // https://leetcode.com/problems/4sum/
 
-function fourSum(nums, target) {
+function fourSum(nums: number[], target: number): number[][] {
     nums.sort((a, b) => a - b);  // Step 1: Sort the array
     const result = [];
 
