@@ -3,11 +3,11 @@
 // Time: O(n^2), Space: O(1)
 
 function countSubstrings(s: string): number {
-    function expand(left: number, right: number, s: string): number {
-      const res = [];
+    function expand(left: number, right: number, str: string): number {
+      const res: string[] = [];
 
-      while (left >= 0 && right < s.length && s[left] === s[right]) {
-        res.push(s.substring(left, right));
+      while (left >= 0 && right < str.length && str[left] === str[right]) {
+        res.push(str.substring(left, right));
         left--;
         right++;
       }
@@ -15,7 +15,7 @@ function countSubstrings(s: string): number {
       return res.length;
     }
 
-    let nums = 0;
+    let nums = 0; 
     for (let i = 0; i < s.length; i++) {
       nums += expand(i, i, s);
       nums += expand(i, i + 1, s);
