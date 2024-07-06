@@ -1,6 +1,7 @@
-// Subsets
+// Subsets - MEDIUM
 // Given a set of distinct integers, nums, return all possible subsets (the power set).
 // Note: The solution set must not contain duplicate subsets.
+// https://leetcode.com/problems/subsets
 
 function subsets(nums: number[]): number[][] {
     const result: number[][] = [];
