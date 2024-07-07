@@ -17,35 +17,26 @@
 // Given the root of a binary tree, return the level order traversal of its nodes' values. (i.e., from left to right, level by level).
 
 function levelOrder(root: TreeNode | null): number[][] {
-    // Basically, a BFS traversal of the tree (queue)
+    if (!root) return [];
+    const res: number[][] = [];
+    const queue: TreeNode[] = [root];
 
-    const queue = []
-    const answer = []
+    while (queue.length) {
+        const size = queue.length;
+        const level: number[] = [];
 
-    queue.push(root)
-
-    while(queue.length) {
-        const arr = []
-
-        while(queue.length) {
-            const item = queue.pop()
-            arr.push(item)
+        for (let i = 0; i < size; i++) {
+            const node = queue.shift();
+            level.push(node.val);
+            if (node.left) queue.push(node.left);
+            if (node.right) queue.push(node.right);
         }
 
-        for (let node of arr) {
-            if (node.right) {
-                queue.push(node.right)
-            }
-            if (node.left) {
-                queue.push(node.left)
-            }
-        }
-
-        answer.push(arr.map(n => n.val))
+        res.push(level);
     }
 
-    return answer;
-};
+    return res;
+}
 
 // Time Complexity: O(N)
 console.log(levelOrder({val: 3, left: {val: 9, left: null, right: null}, right: {val: 20, left: {val: 15, left: null, right: null}, right: {val: 7, left: null, right: null}}))  // [[3],[9,20],[15,7]]
