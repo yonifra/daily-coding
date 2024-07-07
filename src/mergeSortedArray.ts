@@ -36,5 +36,12 @@
     }
 };
 
-console.log(merge([1,2,3,0,0,0], 3, [2,5,6], 3)) // [1,2,2,3,5,6]
-console.log(merge([1], 1, [], 0)) // [1]
+// Testcase 1
+let nums0 = [1,2,3,0,0,0]
+merge(nums0, 3, [2,5,6], 3)
+console.log(nums0) // [1,2,2,3,5,6]
+
+// Testcase 2
+let nums1 = [1]
+merge(nums1, 1, [], 0)
+console.log(nums1) // [1]
