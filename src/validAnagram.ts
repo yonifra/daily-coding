@@ -35,6 +35,6 @@ const isValidAnagram = (s: string, t: string): boolean => {
         : true
 }
 
-console.log(isValidAnagram("cat", "tac"))
-console.log(isValidAnagram("listen", "silent"))
-console.log(isValidAnagram("program", "function"))
+console.log(isValidAnagram('cat', 'tac'))
+console.log(isValidAnagram('listen', 'silent'))
+console.log(isValidAnagram('program', 'function'))

@@ -17,7 +17,7 @@ const printList = (head: LLNode | undefined) => {
         result.push(head.value)
         head = head.next
     }
-    console.log(result.join(" -> "))
+    console.log(result.join(' -> '))
 }
 
 const removeValue = (node: LLNode, value: number): LLNode => {

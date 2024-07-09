@@ -1,6 +1,6 @@
 class LCANode {
-    parent: LCANode;
-    value: string;
+    parent: LCANode
+    value: string
 
     constructor(value: string, parent: LCANode) {
         this.value = value
@@ -13,15 +13,15 @@ class LCANode {
 }
 
 // A tree
-const a = new LCANode("a", null)
-const b = new LCANode("b", a)
-const c = new LCANode("c", a)
-const z = new LCANode("z", b)
-const w = new LCANode("w", b)
-const e = new LCANode("e", c)
-const d = new LCANode("d", c)
-const k = new LCANode("k", d)
-const j = new LCANode("j", d)
+const a = new LCANode('a', null)
+const b = new LCANode('b', a)
+const c = new LCANode('c', a)
+const z = new LCANode('z', b)
+const w = new LCANode('w', b)
+const e = new LCANode('e', c)
+const d = new LCANode('d', c)
+const k = new LCANode('k', d)
+const j = new LCANode('j', d)
 
 function LCA(nodeA: LCANode, nodeB: LCANode) {
     // Find the node which is farther from the root

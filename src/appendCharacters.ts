@@ -6,16 +6,16 @@
 // A subsequence is a string that can be derived from another string by deleting some or no characters without changing the order of the remaining characters.
 
 function appendCharacters(s: string, t: string): number {
-    let tIndex = 0;
+    let tIndex = 0
 
     for (let sIndex = 0; sIndex < s.length; sIndex++) {
         if (s.charAt(sIndex) === t.charAt(tIndex)) {
-            tIndex++;
+            tIndex++
         }
     }
 
-    return t.length - tIndex;
-};
+    return t.length - tIndex
+}
 
 console.log(appendCharacters('ab', 'abc'))
 console.log(appendCharacters('coaching', 'coding'))

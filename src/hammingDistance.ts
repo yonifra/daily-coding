@@ -5,14 +5,14 @@
 // Given two integers x and y, return the Hamming distance between them.
 
 function hammingDistance(x: number, y: number): number {
-    let xor = x ^ y;
-    let count = 0;
+    let xor = x ^ y
+    let count = 0
     while (xor) {
-        count += xor & 1;
-        xor >>= 1;
+        count += xor & 1
+        xor >>= 1
     }
-    return count;
-};
+    return count
+}
 
-console.log(hammingDistance(1, 4));
-console.log(hammingDistance(1, 3));
+console.log(hammingDistance(1, 4))
+console.log(hammingDistance(1, 3))

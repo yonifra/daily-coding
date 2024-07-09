@@ -30,5 +30,5 @@ console.log(`Length of array is`, ans.length)
 console.log(`Summing to ${sum}`, ans)
 console.log(
     `Total sum is`,
-    ans.reduce((acc, curr, ans) => acc + curr, 0)
+    ans.reduce((acc, curr, ans) => acc + curr, 0),
 )

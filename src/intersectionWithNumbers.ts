@@ -9,7 +9,7 @@
 
 const intersectionWithNumbers = (
     nums1: number[],
-    nums2: number[]
+    nums2: number[],
 ): number[] => {
     const map = new Set<number>(nums1)
 

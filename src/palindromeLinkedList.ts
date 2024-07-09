@@ -26,40 +26,42 @@ interface ListNode {
 
 function isPalindrome(head: ListNode | null): boolean {
     const arr: number[] = []
-    let curr = head;
+    let curr = head
 
     while (curr) {
-        arr.push(curr.val);
-        curr = curr.next;
+        arr.push(curr.val)
+        curr = curr.next
     }
 
     // here we should have all values in arr, so check the palindrome as a regular palindrome
 
-    let L = 0;
-    let R = arr.length - 1;
+    let L = 0
+    let R = arr.length - 1
 
     while (L < R) {
         if (arr[L] !== arr[R]) {
-            return false;
+            return false
         }
-        L++;
-        R--;
+        L++
+        R--
     }
 
-    return true;
-};
+    return true
+}
 
 // Time complexity: O(N)
-console.log(isPalindrome({
-    val: 1,
-    next: {
-        val: 2,
+console.log(
+    isPalindrome({
+        val: 1,
         next: {
             val: 2,
             next: {
-                val: 1,
-                next: null
-            }
-        }
-    }
-})) // true
+                val: 2,
+                next: {
+                    val: 1,
+                    next: null,
+                },
+            },
+        },
+    }),
+) // true

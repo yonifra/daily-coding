@@ -11,7 +11,7 @@
 
 const spotTheDifference = (s: string, t: string): string => {
     if (s.length === t.length) {
-        return ""
+        return ''
     }
 
     let seen = new Map<string, number>()
@@ -32,9 +32,9 @@ const spotTheDifference = (s: string, t: string): string => {
         }
     }
 
-    return ""
+    return ''
 }
 
-console.log(spotTheDifference("foobar", "barfoot"))
-console.log(spotTheDifference("ide", "idea"))
-console.log(spotTheDifference("coding", "ingcod"))
+console.log(spotTheDifference('foobar', 'barfoot'))
+console.log(spotTheDifference('ide', 'idea'))
+console.log(spotTheDifference('coding', 'ingcod'))

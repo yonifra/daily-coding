@@ -17,14 +17,14 @@
 
 function preorderTraversal(root: TreeNode | null): number[] {
     return preorderRecursive(root, [])
-};
+}
 
 function preorderRecursive(root: TreeNode | null, arr: number[]): number[] {
-    if (!root) return arr;
+    if (!root) return arr
 
     arr.push(root.val)
     preorderRecursive(root.left, arr)
     preorderRecursive(root.right, arr)
 
-    return arr;
+    return arr
 }

@@ -3,7 +3,6 @@
 // Given a string s, determine if it is a palindrome, considering only alphanumeric characters and ignoring cases.
 //
 
-
 function isPalindrome(s: string): boolean {
     const candidate = cleanupString(s)
     let start = 0
@@ -11,15 +10,15 @@ function isPalindrome(s: string): boolean {
 
     while (start < end) {
         if (candidate.charAt(start) !== candidate.charAt(end)) {
-            return false;
+            return false
         }
 
-        start++;
-        end--;
+        start++
+        end--
     }
 
-    return true;
-};
+    return true
+}
 
 // returns lowercase alphanumeric only.
 // time - O(n) space - O(n)
@@ -31,7 +30,10 @@ function cleanupString(s: string): string {
 
     for (let i = 0; i < s.length; i++) {
         const charCode = s.charCodeAt(i)
-        if ((charCode >= aCode && charCode <= zCode) || (charCode >= '0'.charCodeAt(0) && charCode <= '9'.charCodeAt(0))) {
+        if (
+            (charCode >= aCode && charCode <= zCode) ||
+            (charCode >= '0'.charCodeAt(0) && charCode <= '9'.charCodeAt(0))
+        ) {
             arr.push(s.charAt(i))
         }
     }

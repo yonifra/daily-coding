@@ -17,42 +17,74 @@ function exist(board: string[][], word: string): boolean {
         for (let j = 0; j < board[0].length; j++) {
             if (board[i][j] === word.charAt(0)) {
                 if (find(board, word, i, j, 0, new Set())) {
-                    return true;
+                    return true
                 }
             }
         }
     }
 
     return false
-};
+}
 
-function find(board: string[][], word: string, i: number, j: number, index: number, visited: Set<string>): boolean {
+function find(
+    board: string[][],
+    word: string,
+    i: number,
+    j: number,
+    index: number,
+    visited: Set<string>,
+): boolean {
     // Word found
     if (index === word.length) {
         return true
     }
 
-
     // Out of bounds
-    if (i > board.length - 1 || i < 0 || j > board[0].length - 1 || j < 0 || visited.has(`${i}-${j}`) || board[i][j] !== word.charAt(index)) {
+    if (
+        i > board.length - 1 ||
+        i < 0 ||
+        j > board[0].length - 1 ||
+        j < 0 ||
+        visited.has(`${i}-${j}`) ||
+        board[i][j] !== word.charAt(index)
+    ) {
         return false
     }
 
     visited.add(`${i}-${j}`)
-    if(find(board, word, i + 1, j, index + 1, visited) ||
-     find(board, word, i - 1, j, index + 1, visited) ||
-     find(board, word, i, j + 1, index + 1, visited) ||
-     find(board, word, i, j - 1, index + 1, visited)) {
+    if (
+        find(board, word, i + 1, j, index + 1, visited) ||
+        find(board, word, i - 1, j, index + 1, visited) ||
+        find(board, word, i, j + 1, index + 1, visited) ||
+        find(board, word, i, j - 1, index + 1, visited)
+    ) {
         return true
-     }
+    }
 
-     visited.delete(`${i}-${j}`)
-     return false
+    visited.delete(`${i}-${j}`)
+    return false
 }
 
-
-console.log(exist([["A","B","C","E"],["S","F","C","S"],["A","D","E","E"]], "ABCCED")) // true
-console.log(exist([["A","B","C","E"],["S","F","E","S"],["A","D","E","E"]], "ABCESEEEFS")) // true
+console.log(
+    exist(
+        [
+            ['A', 'B', 'C', 'E'],
+            ['S', 'F', 'C', 'S'],
+            ['A', 'D', 'E', 'E'],
+        ],
+        'ABCCED',
+    ),
+) // true
+console.log(
+    exist(
+        [
+            ['A', 'B', 'C', 'E'],
+            ['S', 'F', 'E', 'S'],
+            ['A', 'D', 'E', 'E'],
+        ],
+        'ABCESEEEFS',
+    ),
+) // true
 
 // ABCE
 // SFES

@@ -2,8 +2,6 @@
 
 // Each letter in magazine can only be used once in ransomNote.
 
-
-
 // Example 1:
 
 // Input: ransomNote = "a", magazine = "b"
@@ -17,7 +15,6 @@
 // Input: ransomNote = "aa", magazine = "aab"
 // Output: true
 
-
 // Constraints:
 
 // 1 <= ransomNote.length, magazine.length <= 105
@@ -28,11 +25,14 @@
  * @param {string} magazine
  * @return {boolean}
  */
-var canConstruct = function(ransomNote: string, magazine: string): boolean {
+var canConstruct = function (ransomNote: string, magazine: string): boolean {
     const magazineDictionary = createDictionary(magazine)
     const ransomLetters = ransomNote.split('')
     for (let i = 0; i < ransomLetters.length; i++) {
-        if (!magazineDictionary[ransomLetters[i]] || magazineDictionary[ransomLetters[i]] === 0) {
+        if (
+            !magazineDictionary[ransomLetters[i]] ||
+            magazineDictionary[ransomLetters[i]] === 0
+        ) {
             return false
         }
 
@@ -40,12 +40,12 @@ var canConstruct = function(ransomNote: string, magazine: string): boolean {
     }
 
     return true
-};
+}
 
 function createDictionary(str: string): Record<string, number> {
     const dictionary = {}
 
-    str.split('').forEach(letter => {
+    str.split('').forEach((letter) => {
         if (!dictionary[letter]) {
             dictionary[letter] = 1
         } else {

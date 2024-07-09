@@ -6,25 +6,25 @@
 
 function minCostClimbingStairs(cost: number[]): number {
     if (!cost || cost.length === 0) {
-        return 0;
+        return 0
     }
 
     if (cost.length === 1) {
         return cost[0]
     }
 
-    const dp = new Array(cost.length);
+    const dp = new Array(cost.length)
     dp[0] = cost[0]
     dp[1] = cost[1]
-    let min = Math.min(dp[0], dp[1]);
+    let min = Math.min(dp[0], dp[1])
 
     for (let i = 2; i < cost.length; i++) {
-        dp[i] = Math.min(dp[i-1] + cost[i], dp[i-2] + cost[i])
-        min = Math.min(dp[i-1], dp[i])
+        dp[i] = Math.min(dp[i - 1] + cost[i], dp[i - 2] + cost[i])
+        min = Math.min(dp[i - 1], dp[i])
     }
 
     return min
-};
+}
 
 // Time complexity: O(n)
 console.log(minCostClimbingStairs([10, 15, 20])) // 15

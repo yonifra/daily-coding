@@ -3,7 +3,7 @@
  * @param {string} b
  * @return {string}
  */
-var addBinary = function(a: string, b: string): string {
+var addBinary = function (a: string, b: string): string {
     const answer = []
     let curry = 0
     a = a.split('').reverse()
@@ -11,7 +11,7 @@ var addBinary = function(a: string, b: string): string {
 
     const maxLength = Math.max(a.length, b.length)
 
-    for(let i = 0; i < maxLength; i++) {
+    for (let i = 0; i < maxLength; i++) {
         let aNum = 0
         let bNum = 0
         if (a.length > i) {
@@ -23,7 +23,7 @@ var addBinary = function(a: string, b: string): string {
         }
 
         const res = aNum + bNum + curry
-        switch(res) {
+        switch (res) {
             case 0: {
                 answer.push('0')
                 curry = 0
@@ -52,6 +52,6 @@ var addBinary = function(a: string, b: string): string {
     }
 
     return answer.reverse().join('')
-};
+}
 
 console.log(addBinary('1011', '1001'))

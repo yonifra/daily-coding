@@ -3,12 +3,12 @@
 
 function isSameTree(p: TreeNode | null, q: TreeNode | null): boolean {
     if (!q && !p) {
-        return true;
+        return true
     }
 
     if ((!q && p) || (q && !p) || q.val !== p.val) {
-        return false;
+        return false
     }
 
     return isSameTree(p.left, q.left) && isSameTree(p.right, q.right)
-};
+}

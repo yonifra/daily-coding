@@ -17,12 +17,16 @@
 // Given a binary search tree (BST), find the lowest common ancestor (LCA) of two given nodes in the BST.
 // According to the definition of LCA on Wikipedia: “The lowest common ancestor is defined between two nodes p and q as the lowest node in T that has both p and q as descendants (where we allow a node to be a descendant of itself).”
 
-function lowestCommonAncestor(root: TreeNode | null, p: TreeNode | null, q: TreeNode | null): TreeNode | null {
-	const pPathArr = findPath(root, p);
-    const qPathArr = findPath(root, q);
+function lowestCommonAncestor(
+    root: TreeNode | null,
+    p: TreeNode | null,
+    q: TreeNode | null,
+): TreeNode | null {
+    const pPathArr = findPath(root, p)
+    const qPathArr = findPath(root, q)
 
-    const minArr = qPathArr.length < pPathArr.length ? qPathArr : pPathArr;
-    const maxArr = qPathArr.length < pPathArr.length ? pPathArr : qPathArr;
+    const minArr = qPathArr.length < pPathArr.length ? qPathArr : pPathArr
+    const maxArr = qPathArr.length < pPathArr.length ? pPathArr : qPathArr
 
     for (let i = minArr.length - 1; i >= 0; i--) {
         if (minArr[i] === maxArr[i]) {
@@ -30,23 +34,23 @@ function lowestCommonAncestor(root: TreeNode | null, p: TreeNode | null, q: Tree
         }
     }
 
-    return null;
-};
+    return null
+}
 
 function findPath(root: TreeNode | null, p: TreeNode | null): TreeNode[] {
     if (root.val === p.val) {
-        return [root];
+        return [root]
     }
 
     const arr = []
 
-    while(root.val !== p.val) {
+    while (root.val !== p.val) {
         arr.push(root)
 
         if (root.val > p.val) {
             root = root.left
         } else {
-            root = root.right;
+            root = root.right
         }
     }
 

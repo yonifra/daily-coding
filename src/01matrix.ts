@@ -23,17 +23,17 @@ var updateMatrix = function (mat: number[][]): number[][] {
 
     // BFS
     while (queue.length) {
-        const [currX, currY, val] = queue.shift();
+        const [currX, currY, val] = queue.shift()
 
         if (mat[currX][currY] > val) {
             mat[currX][currY] = val
         }
 
         for (const dir of dirs) {
-            const [x, y, newVal] = [currX + dir[0], currY + dir[1], val + 1];
+            const [x, y, newVal] = [currX + dir[0], currY + dir[1], val + 1]
 
             if (x < 0 || y < 0 || x > mat.length - 1 || y > mat[0].length - 1)
-                continue;
+                continue
 
             if (mat[x][y] === Infinity) {
                 queue.push([x, y, newVal])
@@ -41,7 +41,13 @@ var updateMatrix = function (mat: number[][]): number[][] {
         }
     }
 
-    return mat;
+    return mat
 }
 
-updateMatrix([[0,1,0,1,1],[1,1,0,0,1],[0,0,0,1,0],[1,0,1,1,1],[1,0,0,0,1]]) // [[0,1,0,1,2],[1,1,0,0,1],[0,0,0,1,0],[1,0,1,1,1],[1,0,0,0,1]]
+updateMatrix([
+    [0, 1, 0, 1, 1],
+    [1, 1, 0, 0, 1],
+    [0, 0, 0, 1, 0],
+    [1, 0, 1, 1, 1],
+    [1, 0, 0, 0, 1],
+]) // [[0,1,0,1,2],[1,1,0,0,1],[0,0,0,1,0],[1,0,1,1,1],[1,0,0,0,1]]

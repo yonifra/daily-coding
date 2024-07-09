@@ -21,37 +21,41 @@ class TreeNode {
     }
 }
 
-const root = new TreeNode(1, null, new TreeNode(2, null, new TreeNode(3, null, null)))
+const root = new TreeNode(
+    1,
+    null,
+    new TreeNode(2, null, new TreeNode(3, null, null)),
+)
 
 const isBalanced = function (root) {
-  if (!root || isLeaf(root)) {
-    return true
-  }
+    if (!root || isLeaf(root)) {
+        return true
+    }
 
-  if (Math.abs(getHeight(0, root.left) - getHeight(0, root.right)) > 1) {
-    return false
-  }
+    if (Math.abs(getHeight(0, root.left) - getHeight(0, root.right)) > 1) {
+        return false
+    }
 
-  return isBalanced(root.right) && isBalanced(root.left)
+    return isBalanced(root.right) && isBalanced(root.left)
 }
 
 function isLeaf(node) {
-  return node && node.right === null && node.left === null
+    return node && node.right === null && node.left === null
 }
 
 function getHeight(currentHeight, node) {
-  if (!node) {
-    return currentHeight
-  }
+    if (!node) {
+        return currentHeight
+    }
 
-  if (isLeaf(node)) {
-    return currentHeight+1
-  }
+    if (isLeaf(node)) {
+        return currentHeight + 1
+    }
 
-  return Math.max(
-    getHeight(currentHeight + 1, node.left),
-    getHeight(currentHeight + 1, node.right)
-  )
+    return Math.max(
+        getHeight(currentHeight + 1, node.left),
+        getHeight(currentHeight + 1, node.right),
+    )
 }
 
 console.log(isBalanced(root))

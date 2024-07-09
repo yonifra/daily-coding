@@ -16,7 +16,7 @@ interface BSTNode {
 
 const findValue = (
     bstNode: BSTNode,
-    valueToFind: number
+    valueToFind: number,
 ): number | undefined => {
     if (!bstNode) {
         return undefined

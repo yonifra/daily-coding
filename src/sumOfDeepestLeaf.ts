@@ -14,13 +14,13 @@
 //           3, return 3.
 
 interface Root {
-    right: Root | undefined,
-    left: Root | undefined,
+    right: Root | undefined
+    left: Root | undefined
     value: number
 }
 
 interface ReturnValue {
-    level: number,
+    level: number
     value: number
 }
 
@@ -34,10 +34,22 @@ const addToAnswer = (level: number, value: number): void => {
     }
 }
 
-const deepestLeafSum = (root: Root, previousLevel: number, previousValue: number): ReturnValue => {
-    if (!root) return {level: previousLevel, value: previousValue};
-    const leftValue = deepestLeafSum(root.left, previousLevel + 1, previousValue + root.value)
-    const rightValue = deepestLeafSum(root.right, previousLevel + 1, previousValue + root.value)
+const deepestLeafSum = (
+    root: Root,
+    previousLevel: number,
+    previousValue: number,
+): ReturnValue => {
+    if (!root) return { level: previousLevel, value: previousValue }
+    const leftValue = deepestLeafSum(
+        root.left,
+        previousLevel + 1,
+        previousValue + root.value,
+    )
+    const rightValue = deepestLeafSum(
+        root.right,
+        previousLevel + 1,
+        previousValue + root.value,
+    )
 
     addToAnswer(leftValue.level, leftValue.value)
     addToAnswer(rightValue.level, rightValue.value)
@@ -49,4 +61,4 @@ const getIt = (root: Root): number => {
     return Math.max(answer[deepest])
 }
 
-console.log(getIt({value: 4, right: undefined, left: undefined}))
+console.log(getIt({ value: 4, right: undefined, left: undefined }))

@@ -13,7 +13,7 @@ const stringToDigit = {
 
 const convertToNumber = (str: string): number => {
     const ans = []
-    const arr = str.split("")
+    const arr = str.split('')
     let currentString = []
 
     for (let i = 0; i < arr.length; i++) {
@@ -28,7 +28,7 @@ const convertToNumber = (str: string): number => {
     }
 
     checkString(currentString, ans)
-    return Number.parseInt(ans.join(""))
+    return Number.parseInt(ans.join(''))
 }
 
 const compare = (str1, str2) => {
@@ -46,11 +46,11 @@ const compare = (str1, str2) => {
 
 function checkString(currentString: any[], ans: any[]) {
     if (currentString.length > 0) {
-        ans.push(stringToDigit[currentString.join("")])
+        ans.push(stringToDigit[currentString.join('')])
         currentString = []
     }
 }
 
-console.log(compare("1two3", "five4"))
-console.log(compare("12", "three2"))
-console.log(compare("12", "1two"))
+console.log(compare('1two3', 'five4'))
+console.log(compare('12', 'three2'))
+console.log(compare('12', '1two'))

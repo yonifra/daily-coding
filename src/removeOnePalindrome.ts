@@ -30,7 +30,7 @@ const removeOnePalindrome = (str: String): boolean => {
     return true
 }
 
-console.log(removeOnePalindrome("aba"))
-console.log(removeOnePalindrome("abcba"))
-console.log(removeOnePalindrome("foobof"))
-console.log(removeOnePalindrome("abccab"))
+console.log(removeOnePalindrome('aba'))
+console.log(removeOnePalindrome('abcba'))
+console.log(removeOnePalindrome('foobof'))
+console.log(removeOnePalindrome('abccab'))

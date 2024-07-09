@@ -1,7 +1,7 @@
 // Find the maximum sub-array sum
 // Leetcode: https://leetcode.com/problems/maximum-subarray/
 
-var maxSubArray = function(nums: number[]): number {
+var maxSubArray = function (nums: number[]): number {
     if (!nums || nums.length === 0) {
         return 0
     }
@@ -16,4 +16,4 @@ var maxSubArray = function(nums: number[]): number {
     }
 
     return max
-};
+}

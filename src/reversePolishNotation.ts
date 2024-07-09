@@ -13,7 +13,6 @@
 // The input represents a valid arithmetic expression in a reverse polish notation.
 // The answer and all the intermediate calculations can be represented in a 32-bit integer.
 
-
 // Example 1:
 
 // Input: tokens = ["2","1","+","3","*"]
@@ -30,33 +29,49 @@ function evalRPN(tokens: string[]): number {
 
     for (let i = 0; i < tokens.length; i++) {
         if (ops.includes(tokens[i])) {
-            i-=2;
-            const res = calculate(tokens, i);
+            i -= 2
+            const res = calculate(tokens, i)
             tokens.splice(i, 2)
             tokens[i] = res.toString()
         }
     }
 
     return parseInt(tokens[0])
-};
+}
 
 function calculate(tokens: string[], index: number): number {
     const firstNum = parseInt(tokens[index])
-    const secondNum = parseInt(tokens[index+1])
-    switch (tokens[index+2]) {
+    const secondNum = parseInt(tokens[index + 1])
+    switch (tokens[index + 2]) {
         case '-':
-            return firstNum - secondNum;
+            return firstNum - secondNum
         case '+':
-            return firstNum + secondNum;
+            return firstNum + secondNum
         case '*':
-            return firstNum * secondNum;
+            return firstNum * secondNum
         case '/':
-            return firstNum / secondNum;
+            return firstNum / secondNum
         default:
             return undefined
     }
 }
 
-console.log(evalRPN(["2","1","+","3","*"])) // 9
-console.log(evalRPN(["4","13","5","/","+"])) // 6
-console.log(evalRPN(["10","6","9","3","+","-11","*","/","*","17","+","5","+"])) // 22
+console.log(evalRPN(['2', '1', '+', '3', '*'])) // 9
+console.log(evalRPN(['4', '13', '5', '/', '+'])) // 6
+console.log(
+    evalRPN([
+        '10',
+        '6',
+        '9',
+        '3',
+        '+',
+        '-11',
+        '*',
+        '/',
+        '*',
+        '17',
+        '+',
+        '5',
+        '+',
+    ]),
+) // 22

@@ -12,7 +12,7 @@
  * @param {ListNode} head
  * @return {ListNode}
  */
-var reverseList = function(head: ListNode): ListNode {
+var reverseList = function (head: ListNode): ListNode {
     if (head === null || !head.next) {
         return head
     }
@@ -21,7 +21,7 @@ var reverseList = function(head: ListNode): ListNode {
     let current = head
     let next = current.next
 
-    while(!!current) {
+    while (!!current) {
         current.next = prev
         prev = current
         current = next
@@ -29,6 +29,6 @@ var reverseList = function(head: ListNode): ListNode {
     }
 
     return prev
-};
+}
 
 // TIME: O(n)

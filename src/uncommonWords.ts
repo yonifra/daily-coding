@@ -9,8 +9,8 @@
 
 const uncommonWords = (first: string, second: string): string[] => {
     const uncommonWords: string[] = []
-    const seenWordsFirst = new Set<string>(first.split(" "))
-    const seenWordsSecond = new Set<string>(second.split(" "))
+    const seenWordsFirst = new Set<string>(first.split(' '))
+    const seenWordsSecond = new Set<string>(second.split(' '))
 
     seenWordsFirst.forEach((word) => {
         if (!seenWordsSecond.has(word)) {
@@ -27,11 +27,11 @@ const uncommonWords = (first: string, second: string): string[] => {
     return uncommonWords
 }
 
-console.log(uncommonWords("the quick", "brown fox"))
+console.log(uncommonWords('the quick', 'brown fox'))
 console.log(
     uncommonWords(
-        "the tortoise beat the haire",
-        "the tortoise lost to the haire"
-    )
+        'the tortoise beat the haire',
+        'the tortoise lost to the haire',
+    ),
 )
-console.log(uncommonWords("copper coffee pot", "hot coffee pot"))
+console.log(uncommonWords('copper coffee pot', 'hot coffee pot'))

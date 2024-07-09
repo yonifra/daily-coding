@@ -13,21 +13,21 @@
 // Explanation: All root-to-leaf paths are: 1->2->5, 1->3
 
 class TreeNode {
-     val: number
-     left: TreeNode | null
-     right: TreeNode | null
-     constructor(val?: number, left?: TreeNode | null, right?: TreeNode | null) {
-         this.val = (val===undefined ? 0 : val)
-         this.left = (left===undefined ? null : left)
-         this.right = (right===undefined ? null : right)
-     }
- }
+    val: number
+    left: TreeNode | null
+    right: TreeNode | null
+    constructor(val?: number, left?: TreeNode | null, right?: TreeNode | null) {
+        this.val = val === undefined ? 0 : val
+        this.left = left === undefined ? null : left
+        this.right = right === undefined ? null : right
+    }
+}
 
- function binaryTreePaths(root: TreeNode | null): string[] {
-    const paths: Set<string> = new Set();
+function binaryTreePaths(root: TreeNode | null): string[] {
+    const paths: Set<string> = new Set()
 
     if (!root) {
-        return [];
+        return []
     }
 
     if (!root.left && !root.right) {
@@ -38,14 +38,15 @@ class TreeNode {
     rec(root.left, [root.val], paths)
 
     return Array.from(paths.values())
-};
+}
 
 function rec(root: TreeNode | null, currentPath: number[], paths: Set<string>) {
     if (!root) {
         return
     }
 
-    if (!root.right && !root.left) {  // If we are at a leaf node
+    if (!root.right && !root.left) {
+        // If we are at a leaf node
         currentPath.push(root.val)
         paths.add(currentPath.join('->'))
         return
@@ -58,4 +59,12 @@ function rec(root: TreeNode | null, currentPath: number[], paths: Set<string>) {
 }
 
 // Test cases
-console.log(binaryTreePaths(new TreeNode(1, new TreeNode(2, null, new TreeNode(5, null, null)), new TreeNode(3, null, null)))) // ["1->2->5", "1->3"]
+console.log(
+    binaryTreePaths(
+        new TreeNode(
+            1,
+            new TreeNode(2, null, new TreeNode(5, null, null)),
+            new TreeNode(3, null, null),
+        ),
+    ),
+) // ["1->2->5", "1->3"]

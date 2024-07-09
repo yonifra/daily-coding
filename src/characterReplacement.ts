@@ -4,26 +4,25 @@
 // In one operation, you can choose any character of the string and change it to any other uppercase English character.
 // Find the length of the longest sub-string containing all repeating letters you can get after performing the above operations.
 
-
 function characterReplacement(s: string, k: number): number {
     if (!s || !s.length) {
-        return 0;
+        return 0
     }
 
-    let right = 0;
-    let left = 0;
+    let right = 0
+    let left = 0
     const map = {}
-    map[s[0]] = 1;
-    let max = -Infinity;
-    let windowSize;
+    map[s[0]] = 1
+    let max = -Infinity
+    let windowSize
 
     while (right < s.length) {
-        windowSize = right - left + 1;
+        windowSize = right - left + 1
 
-        let maxOccurances = {char: '', count: -Infinity};
+        let maxOccurances = { char: '', count: -Infinity }
         for (let i in map) {
             if (maxOccurances.count < map[i]) {
-                maxOccurances = {char: i, count: map[i]}
+                maxOccurances = { char: i, count: map[i] }
             }
         }
 
@@ -37,20 +36,20 @@ function characterReplacement(s: string, k: number): number {
                 incrementEntry(map, s[right])
             }
         } else {
-            map[s[left]] -= 1;
+            map[s[left]] -= 1
             left++
         }
     }
 
-    return max;
-};
+    return max
+}
 
 function incrementEntry(map, c) {
     if (!map[c]) {
-        map[c] = 1;
+        map[c] = 1
     } else {
-        map[c] += 1;
+        map[c] += 1
     }
 }
 
-console.log(characterReplacement("ABAB", 2));
+console.log(characterReplacement('ABAB', 2))

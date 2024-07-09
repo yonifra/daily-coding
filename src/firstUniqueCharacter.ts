@@ -26,7 +26,7 @@ const findUniqueCharacter = (s: string): number => {
     return -1
 }
 
-console.log(findUniqueCharacter("abcabd"))
-console.log(findUniqueCharacter("thedailybyte"))
-console.log(findUniqueCharacter("developer"))
-console.log(findUniqueCharacter("aavvcc"))
+console.log(findUniqueCharacter('abcabd'))
+console.log(findUniqueCharacter('thedailybyte'))
+console.log(findUniqueCharacter('developer'))
+console.log(findUniqueCharacter('aavvcc'))

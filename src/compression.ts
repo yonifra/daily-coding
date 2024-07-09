@@ -15,4 +15,4 @@ const compress = (arr: any[]): number => {
     return map.size < arr.length ? map.size : arr.length
 }
 
-console.log(compress(["a", "a", "a", "a", "a", "a"]))
+console.log(compress(['a', 'a', 'a', 'a', 'a', 'a']))

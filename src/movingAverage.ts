@@ -29,7 +29,7 @@ class MovingAverage {
         return (
             this.arr.reduce(
                 (accumulator, currentValue) => accumulator + currentValue,
-                0
+                0,
             ) / this.arr.length
         ) // return the average
     }

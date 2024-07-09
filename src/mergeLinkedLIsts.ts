@@ -13,7 +13,7 @@ interface LinkedListNode {
 
 const mergeLinkedLists = (
     list1: LinkedListNode,
-    list2: LinkedListNode
+    list2: LinkedListNode,
 ): LinkedListNode => {
     const head = list1.value > list2.value ? list2 : list1
 
@@ -42,7 +42,7 @@ const printLinkedList = (head: LinkedListNode) => {
         head = head.next!
     }
 
-    console.log(parts.join(", "))
+    console.log(parts.join(', '))
 }
 
 const list1 = {

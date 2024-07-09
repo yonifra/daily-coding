@@ -2,7 +2,7 @@
 // Given the root of a binary tree, invert the tree, and return its root.
 // https://leetcode.com/problems/invert-binary-tree/
 
-var invertTree = function(root: TreeNode): TreeNode {
+var invertTree = function (root: TreeNode): TreeNode {
     if (!root) {
         return root
     }
@@ -17,4 +17,4 @@ var invertTree = function(root: TreeNode): TreeNode {
     invertTree(root.left)
 
     return root
-};
+}

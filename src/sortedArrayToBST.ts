@@ -17,30 +17,30 @@
 //     1   4   6
 
 interface BSTNode {
-  value: number
-  right: BSTNode | undefined
-  left: BSTNode | undefined
+    value: number
+    right: BSTNode | undefined
+    left: BSTNode | undefined
 }
 
 const arrayToBST = (arr: number[]): BSTNode | undefined => {
-  if (!arr || arr.length === 0) {
-    return undefined
-  }
+    if (!arr || arr.length === 0) {
+        return undefined
+    }
 
-  if (arr.length === 1) {
-    return { value: arr[0], left: undefined, right: undefined } as BSTNode
-  }
+    if (arr.length === 1) {
+        return { value: arr[0], left: undefined, right: undefined } as BSTNode
+    }
 
-  const middleIndex = Math.floor(arr.length / 2)
-  const value = arr[middleIndex]
-  const leftArr = arr.splice(0, middleIndex)
-  const rightArr = arr.splice(1, arr.length)
+    const middleIndex = Math.floor(arr.length / 2)
+    const value = arr[middleIndex]
+    const leftArr = arr.splice(0, middleIndex)
+    const rightArr = arr.splice(1, arr.length)
 
-  return {
-    value,
-    left: arrayToBST(leftArr),
-    right: arrayToBST(rightArr),
-  } as BSTNode
+    return {
+        value,
+        left: arrayToBST(leftArr),
+        right: arrayToBST(rightArr),
+    } as BSTNode
 }
 
 console.log(arrayToBST([1, 2, 3, 4, 5, 6]))

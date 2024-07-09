@@ -7,17 +7,17 @@
 /**
  Do not return anything, modify nums1 in-place instead.
  */
- function merge(nums1: number[], m: number, nums2: number[], n: number): void {
+function merge(nums1: number[], m: number, nums2: number[], n: number): void {
     if (m === 0) {
         nums1[0] = nums2[0]
     }
 
-    if (n === 0){
+    if (n === 0) {
         return
     }
-    let right1 = m - 1;
-    let right2 = n - 1;
-    let leftMost = nums1.length - 1;
+    let right1 = m - 1
+    let right2 = n - 1
+    let leftMost = nums1.length - 1
 
     while (right1 >= 0 && right2 >= 0) {
         if (nums1[right1] > nums2[right2]) {
@@ -34,11 +34,11 @@
     for (let i = 0; i <= right2; i++) {
         nums1[i] = nums2[i]
     }
-};
+}
 
 // Testcase 1
-let nums0 = [1,2,3,0,0,0]
-merge(nums0, 3, [2,5,6], 3)
+let nums0 = [1, 2, 3, 0, 0, 0]
+merge(nums0, 3, [2, 5, 6], 3)
 console.log(nums0) // [1,2,2,3,5,6]
 
 // Testcase 2

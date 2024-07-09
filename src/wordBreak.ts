@@ -21,4 +21,4 @@ function wordBreak(s, wordDict) {
     return dp[n]
 }
 
-console.log(wordBreak("goalspecial", ["go", "goal", "goals", "special"]))
+console.log(wordBreak('goalspecial', ['go', 'goal', 'goals', 'special']))

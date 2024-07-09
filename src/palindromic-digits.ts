@@ -21,9 +21,9 @@ const isPalindromic = (n: number): boolean => {
     return true
 }
 
-console.log(isPalindromic(12321), "should be true")
-console.log(isPalindromic(12322), "should be false")
-console.log(isPalindromic(12312), "should be false")
-console.log(isPalindromic(12), "should be false")
-console.log(isPalindromic(1), "should be true")
-console.log(isPalindromic(111), "should be true")
+console.log(isPalindromic(12321), 'should be true')
+console.log(isPalindromic(12322), 'should be false')
+console.log(isPalindromic(12312), 'should be false')
+console.log(isPalindromic(12), 'should be false')
+console.log(isPalindromic(1), 'should be true')
+console.log(isPalindromic(111), 'should be true')

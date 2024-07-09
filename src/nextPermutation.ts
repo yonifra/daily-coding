@@ -14,35 +14,36 @@
 
 function nextPermutation(nums: number[]): void {
     // Step 1: Find the largest index k such that nums[k] < nums[k + 1].
-    let k = nums.length - 2;
+    let k = nums.length - 2
     while (k >= 0 && nums[k] >= nums[k + 1]) {
-        k--;
+        k--
     }
 
     if (k === -1) {
         // If no such index exists, reverse the array
-        nums.reverse();
-        return;
+        nums.reverse()
+        return
     }
 
     // Step 2: Find the largest index l greater than k such that nums[k] < nums[l].
-    let l = nums.length - 1;
+    let l = nums.length - 1
     while (l > k && nums[l] <= nums[k]) {
-        l--;
+        l--
     }
 
     // Step 3: Swap the value of nums[k] with that of nums[l].
-    [nums[k], nums[l]] = [nums[l], nums[k]];
+    ;[nums[k], nums[l]] = [nums[l], nums[k]]
 
     // Step 4: Reverse the sequence from nums[k + 1] to the end.
-    let left = k + 1, right = nums.length - 1;
+    let left = k + 1,
+        right = nums.length - 1
     while (left < right) {
-        [nums[left], nums[right]] = [nums[right], nums[left]];
-        left++;
-        right--;
+        ;[nums[left], nums[right]] = [nums[right], nums[left]]
+        left++
+        right--
     }
 }
 
-const nums = [1,2,3]
-nextPermutation(nums); // [1, 3, 2]
-console.log(nums);
+const nums = [1, 2, 3]
+nextPermutation(nums) // [1, 3, 2]
+console.log(nums)

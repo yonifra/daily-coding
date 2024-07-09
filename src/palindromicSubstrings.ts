@@ -4,25 +4,25 @@
 
 function countSubstrings(s: string): number {
     function expand(left: number, right: number, str: string): number {
-      const res: string[] = [];
+        const res: string[] = []
 
-      while (left >= 0 && right < str.length && str[left] === str[right]) {
-        res.push(str.substring(left, right));
-        left--;
-        right++;
-      }
+        while (left >= 0 && right < str.length && str[left] === str[right]) {
+            res.push(str.substring(left, right))
+            left--
+            right++
+        }
 
-      return res.length;
+        return res.length
     }
 
-    let nums = 0; 
+    let nums = 0
     for (let i = 0; i < s.length; i++) {
-      nums += expand(i, i, s);
-      nums += expand(i, i + 1, s);
+        nums += expand(i, i, s)
+        nums += expand(i, i + 1, s)
     }
 
-    return nums;
-  }
+    return nums
+}
 
-console.log(countSubstrings("abc") === 3)
-console.log(countSubstrings("aaa") === 6)
+console.log(countSubstrings('abc') === 3)
+console.log(countSubstrings('aaa') === 6)

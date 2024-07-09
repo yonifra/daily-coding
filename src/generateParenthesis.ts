@@ -8,22 +8,28 @@ function generateParenthesis(n: number): string[] {
 
     const arr = []
 
-    generateParenthesisRec(n, arr, 1, 0, "(");
+    generateParenthesisRec(n, arr, 1, 0, '(')
 
-    return arr;
-};
+    return arr
+}
 
-function generateParenthesisRec(n: number, arr: string[], openCount: number, closeCount: number, str: string): void {
-    if (str.length === n*2) {
+function generateParenthesisRec(
+    n: number,
+    arr: string[],
+    openCount: number,
+    closeCount: number,
+    str: string,
+): void {
+    if (str.length === n * 2) {
         arr.push(str)
-        return;
+        return
     }
 
     if (openCount < n) {
-        generateParenthesisRec(n, arr, openCount + 1, closeCount, str + "(")
+        generateParenthesisRec(n, arr, openCount + 1, closeCount, str + '(')
     }
 
     if (closeCount < openCount) {
-        generateParenthesisRec(n, arr, openCount, closeCount + 1, str + ")")
+        generateParenthesisRec(n, arr, openCount, closeCount + 1, str + ')')
     }
 }

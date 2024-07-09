@@ -8,12 +8,12 @@
  */
 
 // returns the longest palindrome that can is part of the given string
-var longestPalindrome = function(s: string): number {
+var longestPalindrome = function (s: string): number {
     if (!s || s.length === 0) {
         return 0
     }
 
-    const reversed = s.split('').reverse().join('');
+    const reversed = s.split('').reverse().join('')
 
     let counter = 0
     let max = 0
@@ -42,16 +42,16 @@ var longestPalindrome = function(s: string): number {
 }
 
 function isPalindrome(s: string): boolean {
-    let i = 0;
-    let j = s.length - 1;
+    let i = 0
+    let j = s.length - 1
     while (i < j) {
         if (s[i] !== s[j]) {
-            return false;
+            return false
         }
-        i++;
-        j--;
+        i++
+        j--
     }
-    return true;
+    return true
 }
 
 console.log(longestPalindrome('abcscba'))
