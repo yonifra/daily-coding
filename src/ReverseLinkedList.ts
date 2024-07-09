@@ -12,7 +12,7 @@
  * @param {ListNode} head
  * @return {ListNode}
  */
-var reverseList = function(head) {
+var reverseList = function(head: ListNode): ListNode {
     if (head === null || !head.next) {
         return head
     }
@@ -30,3 +30,5 @@ var reverseList = function(head) {
 
     return prev
 };
+
+// TIME: O(n)

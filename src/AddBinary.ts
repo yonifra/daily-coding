@@ -3,7 +3,7 @@
  * @param {string} b
  * @return {string}
  */
-var addBinary = function(a, b) {
+var addBinary = function(a: string, b: string): string {
     const answer = []
     let curry = 0
     a = a.split('').reverse()

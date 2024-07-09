@@ -28,7 +28,7 @@
  * @param {string} magazine
  * @return {boolean}
  */
-var canConstruct = function(ransomNote, magazine) {
+var canConstruct = function(ransomNote: string, magazine: string): boolean {
     const magazineDictionary = createDictionary(magazine)
     const ransomLetters = ransomNote.split('')
     for (let i = 0; i < ransomLetters.length; i++) {
@@ -42,7 +42,7 @@ var canConstruct = function(ransomNote, magazine) {
     return true
 };
 
-function createDictionary(str) {
+function createDictionary(str: string): Record<string, number> {
     const dictionary = {}
 
     str.split('').forEach(letter => {

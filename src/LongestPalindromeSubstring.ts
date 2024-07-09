@@ -8,7 +8,7 @@
  */
 
 // returns the longest palindrome that can is part of the given string
-var longestPalindrome = function(s) {
+var longestPalindrome = function(s: string): number {
     if (!s || s.length === 0) {
         return 0
     }
@@ -41,7 +41,7 @@ var longestPalindrome = function(s) {
     return max
 }
 
-function isPalindrome(s) {
+function isPalindrome(s: string): boolean {
     let i = 0;
     let j = s.length - 1;
     while (i < j) {

@@ -1,4 +1,4 @@
-const search2 = function(start, end, nums, target) {
+const search2 = function(start: number, end: number, nums: number[], target: number): number {
     if (end <= start) {
       if (nums[end] === target) {
         return end
@@ -28,7 +28,7 @@ const search2 = function(start, end, nums, target) {
     }
   }
 
-  var search = function(nums, target) {
+  var search = function(nums: number[], target: number): number {
     if (!nums || nums.length === 0) {
         return -1;
     }
