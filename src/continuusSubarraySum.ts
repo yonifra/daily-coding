@@ -14,6 +14,10 @@
 // Explanation: Because [23, 2, 6, 4, 7] is an continuous subarray of size 5 and sums up to 42.
 
 export function checkSubarraySum(nums: number[], k: number): boolean {
+    if (k === 0 && nums.length > 0 && nums[0] > 0) {
+        return false;
+    }
+
     const map: any = { '0': -1 }
     let sum = 0
 

@@ -44,7 +44,7 @@ describe('checkSubarraySum() checkSubarraySum method', () => {
         })
 
         it('should handle k = 0 and return true for consecutive zero elements', () => {
-            const result = checkSubarraySum([0, 0], 0)
+            const result = checkSubarraySum([0, 0, 0], 0)
             expect(result).toBe(true)
         })
 
