@@ -13,8 +13,8 @@
 // Output: True
 // Explanation: Because [23, 2, 6, 4, 7] is an continuous subarray of size 5 and sums up to 42.
 
-function checkSubarraySum(nums: number[], k: number): boolean {
-    const map = { '0': -1 }
+export function checkSubarraySum(nums: number[], k: number): boolean {
+    const map: any = { '0': -1 }
     let sum = 0
 
     for (let i = 0; i < nums.length; i++) {
@@ -36,3 +36,4 @@ function checkSubarraySum(nums: number[], k: number): boolean {
 
 console.log(checkSubarraySum([23, 2, 4, 6, 7], 6)) // true
 console.log(checkSubarraySum([2, 4, 3], 6)) // true
+console.log(checkSubarraySum([0, 0], 0)) // true

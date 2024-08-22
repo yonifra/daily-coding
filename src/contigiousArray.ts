@@ -2,7 +2,7 @@
 // Source: https://leetcode.com/problems/contiguous-array/
 // Given a binary array nums, return the maximum length of a contiguous subarray with an equal number of 0 and 1.
 
-function findMaxLength(nums: number[]): number {
+export function findMaxLength(nums: number[]): number {
     let count = 0
     let max = 0
     let map = new Map()
