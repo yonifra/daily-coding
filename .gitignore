@@ -105,3 +105,6 @@ dist
 
 # macOS stuff
 .DS_Store
+
+# Early AI Test coverage
+.early.coverage

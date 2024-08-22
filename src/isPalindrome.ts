@@ -3,7 +3,7 @@
 // Given a string s, determine if it is a palindrome, considering only alphanumeric characters and ignoring cases.
 //
 
-function isPalindrome(s: string): boolean {
+export function isPalindrome(s: string): boolean {
     const candidate = cleanupString(s)
     let start = 0
     let end = candidate.length - 1

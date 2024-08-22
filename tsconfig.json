@@ -1,5 +1,12 @@
 {
     "compilerOptions": {
-        "lib": ["ES2021", "DOM"]
-    }
+        "target": "ES6",
+        "module": "commonjs",
+        "strict": true,
+        "lib": ["ES2021", "DOM"],
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true
+    },
+    "include": ["src/**/*", "tests/**/*"]
 }
