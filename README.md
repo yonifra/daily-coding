@@ -1,5 +1,6 @@
 # Daily Coding Challenges
 
+![Build status](https://github.com/yonifra/daily-coding/.github/actions/workflows/node.js.yml/badge.svg?branch=main)
 ![ts](https://badgen.net/badge/-/TypeScript?icon=typescript&label&labelColor=blue&color=555555)
 
 Daily coding challenges to keep me sharp.
