@@ -24,7 +24,7 @@
 // Output: 6
 // Explanation: (4 + (13 / 5)) = 6
 
-function evalRPN(tokens: string[]): number {
+export function evalRPN(tokens: string[]): number {
     const ops = ['+', '-', '/', '*']
 
     for (let i = 0; i < tokens.length; i++) {
@@ -52,7 +52,7 @@ function calculate(tokens: string[], index: number): number {
         case '/':
             return firstNum / secondNum
         default:
-            return undefined
+            return Number.NaN
     }
 }
 
