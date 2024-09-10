@@ -9,7 +9,7 @@ const isSorted = (arr: number[]): boolean => {
  * @param nums - An array of numbers representing the rotated array.
  * @returns True if the rotated array is sorted, false otherwise.
  */
-const isRotated = (nums: number[]): boolean => {
+export const isRotated = (nums: number[]): boolean => {
     let breakingPoint = -1
 
     for (let i = 1; i < nums.length; i++) {
@@ -20,6 +20,10 @@ const isRotated = (nums: number[]): boolean => {
 
             breakingPoint = i
         }
+    }
+
+    if (breakingPoint === -1) {
+        return true
     }
 
     const firstHalf = nums.slice(0, breakingPoint)
