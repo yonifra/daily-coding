@@ -1,6 +1,6 @@
 {
     "generatedTestStructure": "categories",
-    "testStructureVariant": "siblingFolder",
+    "testStructureVariant": "rootFolder",
     "showAllTreeSrcFiles": true,
     "testFramework": "jest",
     "testSuffix": "test"

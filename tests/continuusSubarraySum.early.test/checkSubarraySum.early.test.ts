@@ -1,6 +1,6 @@
 // Unit tests for: checkSubarraySum
 
-import { checkSubarraySum } from '../../continuusSubarraySum'
+import { checkSubarraySum } from '../../src/continuusSubarraySum'
 
 describe('checkSubarraySum() checkSubarraySum method', () => {
     // Happy Path Tests

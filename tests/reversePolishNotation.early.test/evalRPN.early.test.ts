@@ -1,7 +1,7 @@
 
 // Unit tests for: evalRPN
 
-import { evalRPN } from '../../reversePolishNotation';
+import { evalRPN } from '../../src/reversePolishNotation';
 
 describe('evalRPN() evalRPN method', () => {
     // Happy Path Tests

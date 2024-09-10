@@ -1,6 +1,6 @@
 // Unit tests for: isPalindrome
 
-import { isPalindrome } from '../../isPalindrome'
+import { isPalindrome } from '../../src/isPalindrome'
 
 describe('isPalindrome() isPalindrome method', () => {
     // Happy Path Tests

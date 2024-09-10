@@ -1,6 +1,6 @@
 // Unit tests for: findMaxLength
 
-import { findMaxLength } from '../../contigiousArray'
+import { findMaxLength } from '../../src/contigiousArray'
 
 describe('findMaxLength() findMaxLength method', () => {
     // Happy path tests

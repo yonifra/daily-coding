@@ -1,7 +1,7 @@
 
 // Unit tests for: isRotated
 
-import { isRotated } from '../../arrayRotation';
+import { isRotated } from '../../src/arrayRotation';
 
 describe('isRotated() isRotated method', () => {
     // Happy Path Tests

@@ -1,7 +1,7 @@
 
 // Unit tests for: averageOfLevels
 
-import { averageOfLevels } from '../../averageOfLevels';
+import { averageOfLevels } from '../../src/averageOfLevels';
 
 // MockTreeNode class to simulate TreeNode behavior
 class MockTreeNode {

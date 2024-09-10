@@ -1,6 +1,6 @@
 // Unit tests for: findPointInMostSegments
 
-import { findPointInMostSegments } from '../../pointInMostSegments'
+import { findPointInMostSegments } from '../../src/pointInMostSegments'
 
 describe('findPointInMostSegments() findPointInMostSegments method', () => {
     // Happy Path Tests
