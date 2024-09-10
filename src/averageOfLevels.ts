@@ -23,12 +23,16 @@ class TreeNode {
          }
      }
 
-function averageOfLevels(root: TreeNode | null): number[] {
-    const levelMap = {}
-    const queue = [{node: root, level: 0}]
+export function averageOfLevels(root: TreeNode | null): number[] {
+    if (!root){
+        return []
+    }
+
+    const levelMap: any = {}
+    const queue: Array<{node: TreeNode, level: number}> = [{node: root, level: 0}]
 
     while (queue.length) {
-        const {node, level} = queue.shift();
+        const {node, level} = queue.shift()!;
         if (levelMap[level]) {
             levelMap[level] = (levelMap[level] + node.val) / 2
         } else {
